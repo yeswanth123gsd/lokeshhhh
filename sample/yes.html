@@ -11,58 +11,116 @@
     <title></title>
     <style type="text/css">
         body {
-            font-size: 18px;
-            font-family: 'Arial';
+            font-size: 15px;
+            font-family: 'Trebuchet MS', sans-serif;
             background: #e7e7e7;
         }
 
         #print-table {
-            margin: 0 auto;
-            width: 800px;
+            margin: auto;
+            width: 95%; 
+            max-width: 550px; 
             background: #fff;
             padding: 20px;
+            position: relative; 
+        }
+
+        @media (min-width: 426px) {
+            #print-table {
+                width: 550px;
+                font-weight:500;
+            }
+        }
+
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            gap: 0;
+        }
+
+        .back-button svg {
+            width: 30px;
+            height: 30px;
+            fill: #007bff; 
+            stroke: #007bff; 
+            stroke-width: 1; 
+            margin-right: 1px; 
+        }
+
+        .back-button span {
+            color: #007bff;
+            font-weight:500;
+            font-size: 16px; 
+        }
+
+        .back-button:hover svg {
+            fill: #0056b3; 
+            stroke: #0056b3;
+        }
+
+        .back-button:hover span {
+            color: #0056b3; 
         }
 
         table {
-            margin: 0 auto;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 100%;
         }
 
         table th {
             font-weight: bold;
             text-align: left;
-            width: 25%;
+            width: 35%; 
+            white-space: nowrap;
         }
 
         table td {
-            /*text-align: center;*/
-            width: 75%;
-        }
-
-        table th,
-        table td {
-            /*padding: 5px;*/
-            /*border: 1px solid #ccc;*/
+            width: 65%;
+            word-break: break-word; 
+            white-space: nowrap;
         }
 
         .user-img {
-            width: 50px;
-            /*		height: 50px;*/
-            /*		border-radius: 50%;*/
+            width: 60px; 
+        }
+      
+        .card {
+            width: 100% !important;
+            margin: 0 auto;
+            max-width: 450px; 
         }
     </style>
 </head>
 
 <body>
 
-    <div id="print-table">
-        <div class="card" style="width:600px !important; margin:0 auto;" id="print-pdf">
+    <div id="print-table" style="padding-bottom: 60px; padding-top: 60px;">
+        <!-- Back button with SVG and text -->
+        <a href="index.html" class="back-button">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" id="back">
+                <path d="M22,15H12.41l2.3-2.29a1,1,0,0,0-1.42-1.42l-4,4a1,1,0,0,0-.21.33,1,1,0,0,0,0,.76,1,1,0,0,0,.21.33l4,4a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L12.41,17H22a1,1,0,0,0,0-2Z"></path>
+            </svg>
+            <span>Back</span>
+        </a>
+        <div class="card" id="print-pdf">
             <div class="logo text-center">
-                <!-- <img src="https://gsports.gitam.edu/assets/images/GITAM_logo.png" class="gitam-logo-1" height="50"> -->
-                <img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" height="50">
+                <img src="https://cdn.gitam.edu/images/logo/gitam-new-logo.png" class="gitam-logo-1" width="120px">
                 <h3>Reservation information</h3>
             </div>
             <table class="m17 jb jb1 table table-bordered" style="width:100% !important">
                 <tbody>
+                    <tr>
+                        <th>Ref. number</th>
+                        <td>
+                            <b>20250222762032</b>
+                        </td>
+                    </tr>
                     <tr>
                         <th>Stadium</th>
                         <td>
@@ -82,44 +140,47 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Applicant name</th>
+                        <th>Name</th>
                         <td>
-                            <img src='https://doeresults.gitam.edu/photo/img.aspx?id=VU22CSEN0101456' class='user-img'/> NALA LOKESH						</td>
+                            <img src='https://doeresults.gitam.edu/photo/img.aspx?id=VU22CSEN0101456' class='user-img'/>    NALLA LOKESH
+                        </td>
                     </tr>
                     <tr>
-                        <th>Applicant department</th>
+                        <th>Department</th>
                         <td>
                             CSE
                         </td>
                     </tr>
                     <tr>
-                        <th>Applicant campus</th>
+                        <th>Campus</th>
                         <td>
                             GIT, Visakhapatnam
                         </td>
                     </tr>
                     <tr>
-						<th>Applicant mobile</th>
-						<td>
-							6304564734						</td>
-					</tr>
-					<tr>
-						<th>Applicant e-mail</th>
-						<td>
-							lnalla4@gitam.in						</td>
-					</tr>
+                        <th>Mobile</th>
+                        <td>
+                           6304564734
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>E-mail</th>
+                        <td>
+                            lnalla4@gitam.in
+                        </td>
+                    </tr>
+                    <tr>
                         <th>Booking date</th>
-                        <td id="bookingDate">
+                        <td id="bookingDate" style="font-weight: bold;">
                             
                         </td>
                     </tr>
                     <tr>
                         <th>Booking slot</th>
-                        <td>
-                            06:00 AM to 07:00 AM
+                        <td id="bookingSlot">
+                           
                         </td>
                     </tr>
-
                     <tr>
                         <th>Registration fee</th>
                         <td>
@@ -127,15 +188,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <th>Reference number</th>
-                        <td>
-                            20241029125623
-                        </td>
-                    </tr>
-                    <tr>
                         <th>Status</th>
                         <td>
-                            <b>Approved</b>
+                            <b style="color: rgb(7, 104, 7);">Approved</b>
                         </td>
                     </tr>
                     <tr>
@@ -147,9 +202,6 @@
                 </tbody>
             </table>
         </div>
-
-        <div style="text-align: center;" id="print-btn"><button class="btn btn-primary" onClick='printpage();'
-                type="button">Download</button></div>
     </div>
     <br>
 
@@ -157,7 +209,6 @@
     <script type="text/javascript" src="https://gsports.gitam.edu/assets/js/html2canvas.min.js"></script>
     <script type="text/javascript">
         function printpage() {
-
             document.getElementById("print-btn").style.display = 'none';
             var fileName = '20240807605783' + ".pdf";
             html2canvas(document.getElementById('print-pdf'), {
@@ -183,11 +234,10 @@
             white-space: nowrap;
         }
     </style>
-     <script>
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
-     
-      const bookingDateCell = document.getElementById('bookingDate');
-      const today = new Date();
+        const bookingDateCell = document.getElementById('bookingDate');
+        const today = new Date();
 
         const day = String(today.getDate()).padStart(2, '0');
         const month = today.toLocaleString('default', { month: 'short' });
@@ -195,10 +245,34 @@
 
         const formattedDate = `${day}-${month}-${year}`;
     
-      bookingDateCell.textContent = formattedDate;
+        bookingDateCell.textContent = formattedDate;
+        const now = new Date();
+        let currentHour = now.getHours();
+        let startHour = Math.floor(currentHour);
 
+        let endHour = startHour + 1;
+        let ampmStart = startHour >= 12 ? 'PM' : 'AM';
+        let ampmEnd = endHour >= 12 ? 'PM' : 'AM';
+
+        if (startHour > 12) {
+            startHour -= 12;
+        } else if(startHour === 0){
+            startHour = 12;
+        }
+        if (endHour > 12) {
+            endHour -= 12;
+        } else if(endHour === 0){
+            endHour = 12;
+        }
+
+        const bookingSlotCell = document.getElementById('bookingSlot');
+
+        const formattedStartHour = String(startHour).padStart(2, '0');
+        const formattedEndHour = String(endHour).padStart(2,'0');
+
+        bookingSlotCell.innerHTML = `<span style="color: rgb(7, 104, 7); font-weight: bold "><b> ${formattedStartHour}:00 ${ampmStart} to ${formattedEndHour}:00 ${ampmEnd}</b></span>`;
     });
-  </script>
+    </script>
 
 </body>
 
